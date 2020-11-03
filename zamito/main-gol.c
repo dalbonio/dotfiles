@@ -119,10 +119,6 @@ void GameOfLife(tpLattice *mLattice){
     #pragma omp for
     for (int j = 1; j < mLattice->height - 1; j++){
         for (int i = 1; i < mLattice->width - 1; i++){
-					if(c.attrs[end_cols] == 1){
-						mLattice->buff1[j * mLattice->width + i].attrs[end_cols] = 1;
-						continue;
-					}
 
           nw = mLattice->buff0[(j - 1) * mLattice->width  +  (i - 1)];
            n = mLattice->buff0[(j - 1) * mLattice->width  +  i];
@@ -133,6 +129,11 @@ void GameOfLife(tpLattice *mLattice){
           sw = mLattice->buff0[(j + 1) * mLattice->width  +  (i - 1)];
           s  = mLattice->buff0[(j + 1) * mLattice->width  +  i];
           se = mLattice->buff0[(j + 1) * mLattice->width  +  i+1];
+
+					if(c.attrs[end_cols] == 1){
+						mLattice->buff1[j * mLattice->width + i].attrs[end_cols] = 1;
+						continue;
+					}
 					
 					Cell neighbourhood[8] = {nw, n, ne, w, e, sw, s, se};
 
@@ -147,8 +148,8 @@ void GameOfLife(tpLattice *mLattice){
 					k = 1;
 					//2.1.2 transition rule
 					pn = 0;
-					int nb = 8;
-					//8 is neighbourhood size
+					int nb = 3;
+					//3 is neighbourhood size
 					for (int h = 0; h < nb; h++){	
 							pn += neighbourhood[h].attrs[end];
 					}
