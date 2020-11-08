@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =6
+let g:netrw_dirhist_6='/home/dalbonio/.vim/bundle'
+let g:netrw_dirhist_5='/home/dalbonio/app/src/test/resources/features'
+let g:netrw_dirhist_4='/home/dalbonio/app/src/test/resources'
+let g:netrw_dirhist_3='/home/dalbonio/.vim/bundle/vim-cucumber/ftplugin'
+let g:netrw_dirhist_2='/home/dalbonio/.vim/bundle/vim-cucumber'
+let g:netrw_dirhist_1='/home/dalbonio/.vim/bundle'
