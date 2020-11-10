@@ -11,7 +11,7 @@
 
 int weights[3] = {1, 1, 1};
 int urbanInicial = 0;
-double pThreshold = 40;
+double pThreshold = 1.6;
 
 struct Cell_{
 	int attrs[dataset_cols];
@@ -87,7 +87,7 @@ void InitRandness(tpLattice *mLattice, float p){
           int k = j * mLattice->width + i;
 					for(int col = 0; col < dataset_cols; col++){
 						fscanf(stdin, "%d", &mLattice->buff0[k].attrs[col]);
-						printf("%d , ", mLattice->buff0[k].attrs[col]);
+						printf("%d, ", mLattice->buff0[k].attrs[col]);
 						mLattice->buff1[k].attrs[col] = mLattice->buff0[k].attrs[col];
 					}
 					printf("\n");
@@ -162,7 +162,7 @@ void GameOfLife(tpLattice *mLattice){
 
 					p = p0 * pn * pR; //* pC(skipped rule)
 
-					//printf("Cell[%d,%d]: psum: %.2f, p0: %.2f, pn: %.2f, pR: %.2f, p: %.2f", j, i, psum, p0, pn, pR, p);
+//					printf("Cell[%d,%d]: psum: %.2f, p0: %.2f, pn: %.2f, pR: %.2f, p: %.2f", j, i, psum, p0, pn, pR, p);
 	
 					if(p > pThreshold)
 						mLattice->buff1[j * mLattice->width + i].attrs[end_cols] = 1;
