@@ -11,7 +11,7 @@
 
 int weights[3] = {1, 1, 1};
 int urbanInicial = 0;
-double pThreshold = 40;
+double pThreshold = 1.6;
 
 struct Cell_{
 	int attrs[dataset_cols];
@@ -38,15 +38,15 @@ int main(int ac, char**av)
     int flagSave = atoi(av[4]);
     float prob   = atof(av[5]);
 		int dataset_rows = sqrt(atoi(av[6]));
-		printf("dataset_rows: %d", dataset_rows);
+		//printf("dataset_rows: %d", dataset_rows);
     //Inicializa variável
     mLattice.width  = dataset_rows;
     mLattice.height = dataset_rows;
     mLattice.steps  = atoi(av[3]);
 		int dataset_size = mLattice.width * mLattice.height;
 
-    fprintf(stdout, "\nGame of life");
-    fprintf(stdout, "\nDominio(%d, %d, %d) DatasetSize: %d\n",   mLattice.width,   mLattice.height, mLattice.steps, dataset_size);
+    fprintf(stdout, "Game of life");
+    fprintf(stdout, "\nDominio(%d, %d, %d)\nDatasetSize: %d\n",   mLattice.width,   mLattice.height, mLattice.steps, dataset_size);
 
     fflush(stdout);
 
@@ -54,7 +54,7 @@ int main(int ac, char**av)
     mLattice.buff1 = (Cell*) malloc (dataset_size * sizeof(Cell));
     InitRandness(&mLattice, prob);
 
-		printf("Urban Inicial: %d", urbanInicial);
+		printf("\nUrban Inicial: %d", urbanInicial);
 
     for (int t = 0; t < mLattice.steps; t++)
     {
@@ -79,16 +79,18 @@ void InitRandness(tpLattice *mLattice, float p){
 //  memset(mLattice->buff0, 0x00,  mLattice->width *   mLattice->height *  sizeof(Cell));
 //  memset(mLattice->buff1, 0x00,  mLattice->width *   mLattice->height *  sizeof(Cell));
 //  srand (42);
+//#pragma omp parallel shared(mLattice, p)
 //{
+//  #pragma omp for
   for (int j = 0; j < mLattice->height; j++){
       for (int i = 0; i < mLattice->width; i++){
           int k = j * mLattice->width + i;
 					for(int col = 0; col < dataset_cols; col++){
 						fscanf(stdin, "%d", &mLattice->buff0[k].attrs[col]);
-						printf("%d , ", mLattice->buff0[k].attrs[col]);
+						//printf("%d, ", mLattice->buff0[k].attrs[col]);
 						mLattice->buff1[k].attrs[col] = mLattice->buff0[k].attrs[col];
 					}
-					printf("\n");
+					//printf("\n");
 					urbanInicial += mLattice->buff0[k].attrs[dataset_cols - 1] & 1;
       }//end-  for (int i = 0; i < mLattice->width; i++){
   }//end-for (int j = 0; j < mLattice->height; j++){
@@ -112,6 +114,9 @@ void GameOfLife(tpLattice *mLattice){
        ----|---|----
         sw | s | se
     */
+#pragma omp parallel shared(mLattice) private(nw, n, ne, w, e, sw, s, se, c, pn, p0, pR, p, psum, nb, k)
+{
+    #pragma omp for
     for (int j = 1; j < mLattice->height - 1; j++){
         for (int i = 1; i < mLattice->width - 1; i++){
 
@@ -157,7 +162,7 @@ void GameOfLife(tpLattice *mLattice){
 
 					p = p0 * pn * pR; //* pC(skipped rule)
 
-					//printf("Cell[%d,%d]: psum: %.2f, p0: %.2f, pn: %.2f, pR: %.2f, p: %.2f", j, i, psum, p0, pn, pR, p);
+//					printf("Cell[%d,%d]: psum: %.2f, p0: %.2f, pn: %.2f, pR: %.2f, p: %.2f", j, i, psum, p0, pn, pR, p);
 	
 					if(p > pThreshold)
 						mLattice->buff1[j * mLattice->width + i].attrs[end_cols] = 1;
@@ -165,6 +170,7 @@ void GameOfLife(tpLattice *mLattice){
 						mLattice->buff1[j * mLattice->width + i].attrs[end_cols] = 0;
         }
     }
+}//end-#pragma omp parallel shared(mLattice) private(nw, n, ne, w, e, sw, s, se,c, sum)
 }
 
 /*
@@ -179,7 +185,7 @@ void checkRuralAreas(tpLattice *mLattice)
 			totalUrbanAreas += mLattice->buff0[k].attrs[end_cols] & 1;
 		}
   }
-	printf("Final Urban Areas: %d\n", totalUrbanAreas);
+	printf("\nFinal Urban Areas: %d\n", totalUrbanAreas);
 }
 
 
