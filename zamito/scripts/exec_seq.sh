@@ -8,4 +8,8 @@
 #        |   |-----------> largura
 #        |---------------> altura
 
-time bin/gol_seq 4096 1024 10 0 0.1 $(wc -l dataset/dataset.csv | grep -Eo '[0-9]{1,100}') < dataset/dataset.csv
+if [ $# -eq 1 ]; then
+    iterations=$1
+fi
+
+time bin/gol_seq 4096 1024 $iterations 0 0.1 $(wc -l dataset/dataset.csv | grep -Eo '[0-9]{1,100}') < dataset/dataset.csv
