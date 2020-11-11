@@ -38,15 +38,15 @@ int main(int ac, char**av)
     int flagSave = atoi(av[4]);
     float prob   = atof(av[5]);
 		int dataset_rows = sqrt(atoi(av[6]));
-		printf("dataset_rows: %d", dataset_rows);
+		//printf("dataset_rows: %d", dataset_rows);
     //Inicializa variável
     mLattice.width  = dataset_rows;
     mLattice.height = dataset_rows;
     mLattice.steps  = atoi(av[3]);
 		int dataset_size = mLattice.width * mLattice.height;
 
-    fprintf(stdout, "\nGame of life");
-    fprintf(stdout, "\nDominio(%d, %d, %d) DatasetSize: %d\n",   mLattice.width,   mLattice.height, mLattice.steps, dataset_size);
+    fprintf(stdout, "Game of life");
+    fprintf(stdout, "\nDominio(%d, %d, %d)\nDatasetSize: %d\n",   mLattice.width,   mLattice.height, mLattice.steps, dataset_size);
 
     fflush(stdout);
 
@@ -54,7 +54,7 @@ int main(int ac, char**av)
     mLattice.buff1 = (Cell*) malloc (dataset_size * sizeof(Cell));
     InitRandness(&mLattice, prob);
 
-		printf("Urban Inicial: %d", urbanInicial);
+		printf("\nUrban Inicial: %d", urbanInicial);
 
     for (int t = 0; t < mLattice.steps; t++)
     {
@@ -85,10 +85,10 @@ void InitRandness(tpLattice *mLattice, float p){
           int k = j * mLattice->width + i;
 					for(int col = 0; col < dataset_cols; col++){
 						fscanf(stdin, "%d", &mLattice->buff0[k].attrs[col]);
-						printf("%d , ", mLattice->buff0[k].attrs[col]);
+						//printf("%d , ", mLattice->buff0[k].attrs[col]);
 						mLattice->buff1[k].attrs[col] = mLattice->buff0[k].attrs[col];
 					}
-					printf("\n");
+					//printf("\n");
 					urbanInicial += mLattice->buff0[k].attrs[dataset_cols - 1] & 1;
       }//end-  for (int i = 0; i < mLattice->width; i++){
   }//end-for (int j = 0; j < mLattice->height; j++){
@@ -179,7 +179,7 @@ void checkRuralAreas(tpLattice *mLattice)
 			totalUrbanAreas += mLattice->buff0[k].attrs[end_cols] & 1;
 		}
   }
-	printf("Final Urban Areas: %d\n", totalUrbanAreas);
+	printf("\nFinal Urban Areas: %d\n", totalUrbanAreas);
 }
 
 
