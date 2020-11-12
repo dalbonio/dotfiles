@@ -191,5 +191,6 @@ void checkRuralAreas(tpLattice *mLattice)
 
 double random()
 {
-    return (double)rand() / (double)RAND_MAX;
+  const int seed=42;
+    return (double)rand_r(&seed) / (double)RAND_MAX;
 }
