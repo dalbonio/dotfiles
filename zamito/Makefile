@@ -35,3 +35,5 @@ run_omp:
 
 run_seq:
 	@$(SCRIPTS_DIR)/exec_seq.sh $(iterations)
+
+run_both: run_seq run_omp

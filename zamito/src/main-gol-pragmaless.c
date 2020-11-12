@@ -11,7 +11,7 @@
 
 int weights[3] = {1, 1, 1};
 int urbanInicial = 0;
-double pThreshold = 40;
+double pThreshold = 1.6;
 
 struct Cell_{
 	int attrs[dataset_cols];
