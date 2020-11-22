@@ -8,7 +8,7 @@
 #        |   |-----------> largura
 #        |---------------> altura
 
-iterations=10
+iterations=1000
 
 if [ $# -eq 1 ]; then
     iterations=$1

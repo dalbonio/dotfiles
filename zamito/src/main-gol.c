@@ -4,6 +4,7 @@
 #include <string.h>
 #include <assert.h>
 #include <math.h>
+#include <omp.h>
 
 #define dataset_cols 4
 #define end_cols 3
@@ -48,14 +49,16 @@ int main(int ac, char**av)
     fprintf(stdout, "Game of life");
     fprintf(stdout, "\nDominio(%d, %d, %d)\nDatasetSize: %d\n",   mLattice.width,   mLattice.height, mLattice.steps, dataset_size);
 
+    omp_set_num_threads(6);
+
     fflush(stdout);
 
     mLattice.buff0 = (Cell*) malloc (dataset_size * sizeof(Cell));
     mLattice.buff1 = (Cell*) malloc (dataset_size * sizeof(Cell));
     InitRandness(&mLattice, prob);
 
-		printf("\nUrban Inicial: %d", urbanInicial);
-
+	//printf("\nUrban Inicial: %d", urbanInicial);
+    clock_t begin = clock();
     for (int t = 0; t < mLattice.steps; t++)
     {
       GameOfLife(&mLattice);
@@ -63,8 +66,10 @@ int main(int ac, char**av)
       mLattice.buff0 = mLattice.buff1;
       mLattice.buff1 = swap;
     }
-
-		checkRuralAreas(&mLattice);
+    clock_t end_time = clock();
+    double time_spent = (double)(end_time - begin) / CLOCKS_PER_SEC;
+    printf("\nTime: %.6f\n", time_spent);
+	//checkRuralAreas(&mLattice);
 
     free(mLattice.buff0);
     free(mLattice.buff1);
@@ -158,7 +163,7 @@ void GameOfLife(tpLattice *mLattice){
 					//2.1.3 transition rule skipped (desnecessaria)
 					//
 					//2.1.4 transition rule
-					pR = 1 + pow(-log(random()), k);
+					pR = 1;// + pow(-log(random(omp_get_thread_num())), k);
 
 					p = p0 * pn * pR; //* pC(skipped rule)
 
@@ -189,8 +194,8 @@ void checkRuralAreas(tpLattice *mLattice)
 }
 
 
-double random()
+double random(unsigned int thread_num)
 {
-  const int seed=42;
-    return (double)rand_r(&seed) / (double)RAND_MAX;
+  unsigned int seed = 42 + thread_num;
+  return (double)rand_r(&seed) / (double)RAND_MAX;
 }

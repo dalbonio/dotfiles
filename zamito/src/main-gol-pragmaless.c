@@ -55,7 +55,7 @@ int main(int ac, char**av)
     InitRandness(&mLattice, prob);
 
 		printf("\nUrban Inicial: %d", urbanInicial);
-
+    clock_t begin = clock();
     for (int t = 0; t < mLattice.steps; t++)
     {
       GameOfLife(&mLattice);
@@ -63,6 +63,9 @@ int main(int ac, char**av)
       mLattice.buff0 = mLattice.buff1;
       mLattice.buff1 = swap;
     }
+    clock_t end_time = clock();
+    double time_spent = (double)(end_time - begin) / CLOCKS_PER_SEC;
+    printf("\nTime: %.6f\n", time_spent);
 
 		checkRuralAreas(&mLattice);
 

@@ -15,7 +15,7 @@ all:
 	@echo "run \"make compile\" to compile the program for both sequential and parallel codes"
 	@echo "run \"make run_omp iterations=some_number\" to run the parallel program with some_number iterations"
 	@echo "run \"make run_seq iterations=some_number\" to run the sequential program with some_number iterations"
-	@echo "run \"make new_dataset rows=some_number\" to generate a new random dataset with some_number rows\n(if you don't write \"rows=some_number\", the dataset will have 119746 rows)"
+	@echo "run \"make new_dataset rows=some_number\" to generate a new random dataset with some_number rows\n(if you don't write \"rows=some_number\", the dataset will have 119716 rows)"
 
 compile:
 	@echo "compiling..."

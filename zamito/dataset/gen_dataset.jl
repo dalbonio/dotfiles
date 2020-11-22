@@ -3,7 +3,7 @@ Pkg.activate(".")
 
 using CSV, DataFrames
 
-rows = 119746
+rows = 119716
 
 if length(ARGS) > 0
 	rows = parse(Int64, ARGS[1])
