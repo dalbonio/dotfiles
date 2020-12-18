@@ -1,0 +1,7 @@
+#+TITLE: Self Organizer
+
+* StudyList
+** Academical
+-Compilers
+-LLVM
+-Blockchain
