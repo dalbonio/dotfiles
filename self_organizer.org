@@ -2,6 +2,23 @@
 
 * StudyList
 ** Academical
--Compilers
--LLVM
--Blockchain
++ Blockchain
++ Compilers
++ LLVM
++ Fractal
+** Financial
++ MIT Course
++ Fractal applied in stocks
++ DataScience applied in financial data
+** ML/DataScience
++ Logistic Regression
++ Regularization
++ BatchNormalization
++ JuliaFlux
++ Check Complete ML Course, from analyzing a problem to deploying a solution, even if it is paid course
+** Personal
++ Redes/Linux
++ Linear Algebra
++ MultivariateCalculus
++ NubankAPI
++ organize financial stocks in a spreadsheet
