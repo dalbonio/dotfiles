@@ -1,10 +1,12 @@
+set nocompatible
+
+filetype plugin indent on
+syntax on
 
 call plug#begin('~/.config/nvim/plugged')
 
-
 "colorscheme
 Plug 'dracula/vim'
-
 "To easier comment files
 Plug 'tpope/vim-commentary'
 "Vim Git Integration
@@ -33,12 +35,20 @@ Plug 'tpope/vim-vinegar'
 Plug 'jpalardy/vim-slime'
 "Vim with tmux
 Plug 'christoomey/vim-tmux-navigator'
-
-
+"Colorscheme
+Plug 'ghifarit53/tokyonight-vim'
+"Vim Polyglot
+Plug 'sheerun/vim-polyglot'
+"Ruby Support
+Plug 'vim-ruby/vim-ruby'
+"End of plug calls
 call plug#end()
 
-filetype plugin indent on
-syntax on
+" set termguicolors
+" let g:tokyonight_style = 'storm' " available: night, storm
+" let g:tokyonight_enable_italic = 1
+" let g:tokyonight_transparent_background = 1
+" colorscheme tokyonight
 
 "airline theme"
 let g:airline_theme='deus'
@@ -46,9 +56,10 @@ let g:airline_theme='deus'
 "setting leader to comma"
 let mapleader = ","
 
-set relativenumber
 "setting tab to occupy only 2 spaces
 set tabstop=2 shiftwidth=2 expandtab
+
+set number
 
 "map ,e to open fzf file finder"
 nmap <leader>e :FZF<CR>
