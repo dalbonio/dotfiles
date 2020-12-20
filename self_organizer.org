@@ -1,10 +1,4 @@
 #+TITLE: Self Organizer
-#+MACRO: tema1 Blockchain
-#+MACRO: tema2 Blockchain
-#+MACRO: tema3 Finance
-#+MACRO: tema4 ML/DataScience
-#+MACRO: tema5 Matematica
-
 
 * StudyList
 ** Academical
@@ -28,20 +22,62 @@
 + Linear Algebra
 + MultivariateCalculus
 + NubankAPI
-+ organize financial stocks in a spreadsheet
-** Languages to Learn
++ Organize financial stocks in a spreadsheet
++ Emacs
+** Programming Languages to Learn
 + Julia Parallel
++ Clojure
++ C++ Godlike
++ Ocaml
 + Haskell
 + Rust
 + Elixir(?)
+
 * Possible Personal Projects
-+ Create a personal portfolio money tracking to check earnings and losses day by day
 + Create a personal money managemant using Nubank Api
-+ Enhance my own compiler or create a new compiler
-+ Check Gcc github and try to help in issues
-+ Make some linux patches or see how drivers are implemented
++ Create a personal portfolio money tracking to check earnings and losses day by day
 + Implement a simple, yet complete machine learning task, preferably following a course
++ Enhance my own compiler or create a new compiler
++ Make some linux patches or see how drivers are implemented
++ Check Gcc github and try to help in issues
+
 * TODO LIST
 + Falar Com Gabriel sobre o freela
 + Falar com Equipe e o Blaschek sobre mudar de area na primeup
 + Iniciar um projeto pessoal
+
+* Future Plans
++ Fazer Taekwondo
++ Mudar de area no estagio
+
+* Daily Routine
+** TODO Estudar_Manha :DAILY:
+    SCHEDULED: <2020-12-20 Sat 06:00 +1d>
+** TODO Academia :DAILY:
+    SCHEDULED: <2020-12-20 Sat 08:00 +1d>
+** TODO Lazer_Manha :DAILY:
+    SCHEDULED: <2020-12-20 Sat 11:00 .+1d>
+** TODO Estagio/FreeTime :DAILY:
+    SCHEDULED: <2020-12-20 Sat 13:00 .+1d>
+** TODO Estudar_Tarde :DAILY:
+    SCHEDULED: <2020-12-20 Sat 17:00 .+1d>
+** TODO Lazer_Noite :DAILY:
+    SCHEDULED: <2020-12-20 Sat 20:00 .+1d>
+
+* RoutineTable
+| DiaDaSemana | Segunda  | Terça    | Quarta   | Quinta   | Sexta    | Sabado          | Domingo         |
+|       06:00 | Estudar4 | Estudar1 | Estudar3 | Estudar4 | Estudar4 | Estudar6        | Estudar6        |
+|       08:00 | Acad     | Acad     | Acad     | Acad     | Acad     | Acad            | Acad            |
+|       11:00 | Lazer    | Lazer    | Lazer    | Lazer    | Lazer    | ?               | ?               |
+|       13:00 | Estagio  | Estagio  | Estagio  | Estagio  | Estagio  | PersonalProject | PersonalProject |
+|       17:00 | Estudar2 | Estudar2 | Estudar5 | Estudar1 | Estudar3 | PersonalProject | PersonalProject |
+|       20:00 | Lazer    | Lazer    | Lazer    | Lazer    | Lazer    | Lazer           | Lazer           |
+
+# Local Variables:
+# mode: org
+# org-tema1: Blockchain
+# org-tema2: Blockchain
+# tema3: Finances
+# tema4: Math
+# tema5: ML/DataScience
+# tema6: Personal(Compilers/NewProgLang/Linux)
