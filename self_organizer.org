@@ -66,18 +66,17 @@
 
 * RoutineTable
 | DiaDaSemana | Segunda  | Terça    | Quarta   | Quinta   | Sexta    | Sabado          | Domingo         |
-|       06:00 | Estudar4 | Estudar1 | Estudar3 | Estudar4 | Estudar4 | Estudar6        | Estudar6        |
+|       06:00 | Estudar3 | Estudar2 | Estudar1 | Estudar3 | Estudar1 | Estudar5/2      | Estudar5/2      |
 |       08:00 | Acad     | Acad     | Acad     | Acad     | Acad     | Acad            | Acad            |
 |       11:00 | Lazer    | Lazer    | Lazer    | Lazer    | Lazer    | ?               | ?               |
 |       13:00 | Estagio  | Estagio  | Estagio  | Estagio  | Estagio  | PersonalProject | PersonalProject |
-|       17:00 | Estudar2 | Estudar2 | Estudar5 | Estudar1 | Estudar3 | PersonalProject | PersonalProject |
+|       17:00 | Estudar1 | Estudar1 | Estudar2 | Estudar1 | Estudar4 | PersonalProject | PersonalProject |
 |       20:00 | Lazer    | Lazer    | Lazer    | Lazer    | Lazer    | Lazer           | Lazer           |
 
 # Local Variables:
 # mode: org
 # org-tema1: Blockchain
-# org-tema2: Blockchain
-# tema3: Finances
-# tema4: Math
-# tema5: ML/DataScience
-# tema6: Personal(Compilers/NewProgLang/Linux)
+# tema2: Finances
+# tema3: Math
+# tema4: ML/DataScience
+# tema5: Personal(Compilers/NewProgLang/Linux)
