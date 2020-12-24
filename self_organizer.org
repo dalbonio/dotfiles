@@ -45,6 +45,7 @@
 + Falar Com Gabriel sobre o freela
 + Falar com Equipe e o Blaschek sobre mudar de area na primeup
 + Iniciar um projeto pessoal
++ Fazer acad 6:40 as 7:40
 
 * Future Plans
 + Fazer Taekwondo
@@ -70,13 +71,13 @@
 |       08:00 | Acad     | Acad     | Acad     | Acad     | Acad     | Acad            | Acad            |
 |       11:00 | Lazer    | Lazer    | Lazer    | Lazer    | Lazer    | ?               | ?               |
 |       13:00 | Estagio  | Estagio  | Estagio  | Estagio  | Estagio  | PersonalProject | PersonalProject |
-|       17:00 | Estudar1 | Estudar1 | Estudar2 | Estudar1 | Estudar4 | PersonalProject | PersonalProject |
-|       20:00 | Lazer    | Lazer    | Lazer    | Lazer    | Lazer    | Lazer           | Lazer           |
+|       17:00 | Lazer    | Lazer    | Lazer    | Lazer    | Lazer    | PersonalProject | PersonalProject |
+|       20:00 | Estudar1 | Estudar1 | Estudar2 | Estudar1 | Estudar4 | Lazer           | Lazer           |
 
 # Local Variables:
 # mode: org
-# org-tema1: Blockchain
+# tema1: Blockchain
 # tema2: Finances
-# tema3: Math
-# tema4: ML/DataScience
+# tema3: Security
+# tema4: ML/DataScience/Math
 # tema5: Personal(Compilers/NewProgLang/Linux)
