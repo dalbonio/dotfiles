@@ -81,3 +81,9 @@
 # tema3: Security
 # tema4: ML/DataScience/Math
 # tema5: Personal(Compilers/NewProgLang/Linux)
+
+
+verificar como pegar todos os tickers no yahooquery
+conversar erito sobre outliers, normalizar dados financeiros, dica, calcular linhas de tendencia
+ver sobre matplotlib
+
