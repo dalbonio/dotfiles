@@ -86,4 +86,5 @@
 verificar como pegar todos os tickers no yahooquery
 conversar erito sobre outliers, normalizar dados financeiros, dica, calcular linhas de tendencia
 ver sobre matplotlib
+procurar açoes que custam extremamente barato
 
