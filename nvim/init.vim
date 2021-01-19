@@ -28,7 +28,8 @@ Plug 'tpope/vim-surround'
 "Linting async"
 Plug 'dense-analysis/ale'
 "God grep plugin"
-Plug 'junegunn/fzf'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 "Nerdtree simpler"
 Plug 'tpope/vim-vinegar'
 "Interact with repl in tmux
@@ -41,14 +42,15 @@ Plug 'ghifarit53/tokyonight-vim'
 Plug 'sheerun/vim-polyglot'
 "Ruby Support
 Plug 'vim-ruby/vim-ruby'
+Plug 'tpope/vim-rails'
 "End of plug calls
 call plug#end()
 
-" set termguicolors
-" let g:tokyonight_style = 'storm' " available: night, storm
-" let g:tokyonight_enable_italic = 1
-" let g:tokyonight_transparent_background = 1
-" colorscheme tokyonight
+set termguicolors
+let g:tokyonight_style = 'storm' " available: night, storm
+let g:tokyonight_enable_italic = 1
+let g:tokyonight_transparent_background = 1
+colorscheme tokyonight
 
 "airline theme"
 let g:airline_theme='deus'

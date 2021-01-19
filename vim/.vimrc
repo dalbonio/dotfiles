@@ -1,18 +1,12 @@
-execute pathogen#infect()
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 syntax on
 filetype plugin indent on
 
-:let mapleader = ","
+let mapleader = ","
 
 
-function! MyGrep()
-	let currentline = getline(".")
-	let sparr = split(currentline)
-	call map(sparr, {idx, val -> substitute(val, '<.*>', '.*', '')})
-	let sentence = join(sparr[1:])
-	execute 'vimgrep /@'.sparr[0].'(\"'.sentence.'\")/'.' **/*.java'
-endfunction
-
-
-nnoremap <leader><C-d> :call MyGrep()<CR>
 

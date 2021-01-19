@@ -238,7 +238,14 @@ bar {
 		}
 }
 
+#set lockscreen
 bindsym $mod+Shift+semicolon exec betterlockscreen -l blur 0 -d
+
+#mod+printscrn: take selected screenshot, place in ~/img/scrot
+bindsym --release control+Print exec flameshot gui -p ~/img/scrot
+
+#printscrn: take screenshot where mouse is positioned, place in ~/img/scrot, copy to clipboard
+bindsym --release Print exec flameshot screen -c -p ~/img/scrot
 
 for_window [class="Spotify"] move to workspace $ws10
 assign [class="TelegramDesktop"] $ws4
@@ -251,5 +258,6 @@ assign [class="Oni2_editor"] $ws2
 assign [class="code-oss"] $ws2
 assign [class="kitty"] $ws1
 
-exec unmute_card
+# use keyboard altgr variant
+exec setxkbmap us -variant altgr-intl
 #exec_always --no_startup-id compton --backend glx --blur-method kawase --blur-background --blur-strength 20
