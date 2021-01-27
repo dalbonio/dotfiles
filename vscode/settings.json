@@ -1,0 +1,16 @@
+{
+    "workbench.colorTheme": "Tokyo Night",
+    "editor.fontFamily": "Fira Code",
+    "editor.fontSize": 15,
+    "editor.fontLigatures": true,
+    "[json]": {
+
+        "editor.quickSuggestions": {
+            "strings": true
+        },
+        "editor.suggest.insertMode": "replace"
+    },
+    "terminal.external.linuxExec": "alacritty",
+    "vscode-neovim.neovimExecutablePaths.linux": "/bin/nvim",
+    "vscode-neovim.neovimInitVimPaths.linux": "/home/dalbonio/.config/nvim/minimalist_init.vim"
+}
