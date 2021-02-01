@@ -42,7 +42,7 @@ hide_edge_borders both
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec kitty
+bindsym $mod+Return exec alacritty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -239,7 +239,7 @@ bar {
 }
 
 #set lockscreen
-bindsym $mod+Shift+semicolon exec betterlockscreen -l blur 0 -d
+bindsym $mod+semicolon exec betterlockscreen -l blur 0 -d
 
 #mod+printscrn: take selected screenshot, place in ~/img/scrot
 bindsym --release control+Print exec flameshot gui -p ~/img/scrot
@@ -248,16 +248,19 @@ bindsym --release control+Print exec flameshot gui -p ~/img/scrot
 bindsym --release Print exec flameshot screen -c -p ~/img/scrot
 
 for_window [class="Spotify"] move to workspace $ws10
+for_window [class="youtube*"] move to workspace $ws10
 assign [class="TelegramDesktop"] $ws4
 assign [class="discord"] $ws4
-assign [class="firefox"] $ws3
-assign [class="firefoxdeveloperedition"] $ws5
+assign [class="Firefox"] $ws3
+assign [class="Chromium"] $ws5
 assign [class="Emacs"] $ws2
 assign [class="MyPaint"] $ws6
 assign [class="Oni2_editor"] $ws2
 assign [class="code-oss"] $ws2
-assign [class="kitty"] $ws1
+assign [class="alacritty"] $ws1
+assign [class="youtube*"] $ws1
 
 # use keyboard altgr variant
 exec setxkbmap us -variant altgr-intl
-#exec_always --no_startup-id compton --backend glx --blur-method kawase --blur-background --blur-strength 20
+exec betterlockscreen -w dim
+exec_always --no_startup-id compton --backend glx --blur-method kawase --blur-background

@@ -5,11 +5,40 @@ syntax on
 
 call plug#begin('~/.config/nvim/plugged')
 
-"colorscheme
+" Neovim Lsp Plugins
+" Plug 'neovim/nvim-lspconfig'
+" Plug 'nvim-lua/completion-nvim'
+" Plug 'tjdevries/lsp_extensions.nvim'
+
+"Linting async"
+" Plug 'dense-analysis/ale'
+
+"Neovim Tree Sitter
+" Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+" Plug 'nvim-treesitter/playground'
+" Plug '/home/mpaulson/personal/contextprint.nvim'
+
+" telescope requirements...
+" Plug 'nvim-lua/popup.nvim'
+" Plug 'nvim-lua/plenary.nvim'
+" Plug 'nvim-telescope/telescope.nvim'
+
+" Debugger Plugins
+" Plug 'puremourning/vimspector'
+" Plug 'szw/vim-maximizer'
+
+" Use vim on man command
+Plug 'vim-utils/vim-man'
+
+" Plug 'ocaml/vim-ocaml'
+" Plug 'jordwalke/vim-reasonml'
+
+" Colorscheme
 Plug 'dracula/vim'
-"To easier comment files
+Plug 'ghifarit53/tokyonight-vim'
+" To easier comment files
 Plug 'tpope/vim-commentary'
-"Vim Git Integration
+" Vim Git Integration
 Plug 'tpope/vim-fugitive'
 "Vim bottom bar
 Plug 'vim-airline/vim-airline'
@@ -25,19 +54,16 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'JuliaEditorSupport/julia-vim'
 "Surround elements easier like quoting something or putting parenthesis" 
 Plug 'tpope/vim-surround'
-"Linting async"
-Plug 'dense-analysis/ale'
 "God grep plugin"
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'stsewd/fzf-checkout.vim'
 "Nerdtree simpler"
 Plug 'tpope/vim-vinegar'
 "Interact with repl in tmux
 Plug 'jpalardy/vim-slime'
 "Vim with tmux
 Plug 'christoomey/vim-tmux-navigator'
-"Colorscheme
-Plug 'ghifarit53/tokyonight-vim'
 "Vim Polyglot
 Plug 'sheerun/vim-polyglot'
 "Ruby Support
@@ -51,6 +77,8 @@ let g:tokyonight_style = 'storm' " available: night, storm
 let g:tokyonight_enable_italic = 1
 let g:tokyonight_transparent_background = 1
 colorscheme tokyonight
+
+:set rtp+=<SHARE_DIR>/merlin/vim
 
 "airline theme"
 let g:airline_theme='deus'
@@ -70,6 +98,9 @@ nnoremap <silent> <leader><space> :noh <CR>
 let g:slime_target = "tmux"
 let g:slime_paste_file = "$HOME/.slime_paste"
 let g:slime_default_config = {"socket_name": get(split($TMUX, ","), 0), "target_pane": "{last}"}
+
+
+" lua require'nvim-treesitter.configs'.setup { highlight = { enable = true } }
 
 
 let g:latex_to_unicode_file_types = '$^'
@@ -96,3 +127,15 @@ map <Leader>vp :VimuxPromptCommand<CR>
 
 " Run last command executed by VimuxRunCommand
 map <Leader>vl :VimuxRunLastCommand<CR>
+
+" let g:ale_sign_error                  = '✘'
+" let g:ale_sign_warning                = '⚠'
+" highlight ALEErrorSign ctermbg        =NONE ctermfg=red
+" highlight ALEWarningSign ctermbg      =NONE ctermfg=yellow
+" let g:ale_linters_explicit            = 1
+" let g:ale_lint_on_text_changed        = 'never'
+" let g:ale_lint_on_enter               = 0
+" let g:ale_lint_on_save                = 1
+" let g:ale_fix_on_save                 = 1
+
+
