@@ -1,16 +1,50 @@
 {
     "workbench.colorTheme": "Tokyo Night",
-    "editor.fontFamily": "Fira Code",
-    "editor.fontSize": 15,
-    "editor.fontLigatures": true,
     "[json]": {
-
+    
         "editor.quickSuggestions": {
             "strings": true
         },
         "editor.suggest.insertMode": "replace"
     },
+    "editor.fontFamily" : "Fira Code",
+    "editor.fontSize" : 17,
+    "editor.fontLigatures": true,
     "terminal.external.linuxExec": "alacritty",
-    "vscode-neovim.neovimExecutablePaths.linux": "/bin/nvim",
-    "vscode-neovim.neovimInitVimPaths.linux": "/home/dalbonio/.config/nvim/minimalist_init.vim"
+    "workbench.iconTheme": "material-icon-theme",
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "files.exclude": {
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true
+    },
+    "vim.easymotion": true,
+    "vim.incsearch": true,
+    "vim.useSystemClipboard": true,
+    "vim.useCtrlKeys": true,
+    "vim.hlsearch": true,
+    "vim.insertModeKeyBindings": [
+        {
+        "before": ["j", "j"],
+        "after": ["<Esc>"]
+        }
+    ],
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+        "before": ["<leader>", "d"],
+        "after": ["d", "d"]
+        },
+        {
+        "before": ["<C-n>"],
+        "commands": [":nohl"]
+        }
+    ],
+    "vim.leader": ",",
+    "vim.handleKeys": {
+        "<C-a>": false,
+        "<C-f>": false
+    },
+    "C_Cpp.updateChannel": "Insiders",
 }

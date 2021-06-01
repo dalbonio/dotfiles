@@ -80,6 +80,12 @@ bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
+#
+# move workspace instead of focused using control 
+bindsym control+Shift+h move workspace to output left
+bindsym control+Shift+l move workspace to output right
+bindsym control+Shift+Left move workspace to output left
+bindsym control+Shift+Right move workspace to output right
 
 # split in horizontal orientation
 bindsym $mod+g split h
@@ -115,18 +121,20 @@ set $ws3 "3:  "
 set $ws4 "4:  "
 set $ws5 "5:  "
 set $ws6 "6: "
-set $ws7 "7: "
-set $ws8 "8: "
+set $ws7 "7: "
+set $ws8 "8:  "
 set $ws9 "9: "
 set $ws10 "10:  "
 
-workspace $ws1 output DP-1
-workspace $ws2 output DP-1
-workspace $ws3 output HDMI-1
-workspace $ws4 output HDMI-1
-workspace $ws5 output HDMI-1
-workspace $ws6 output HDMI-1
-workspace $ws10 output HDMI-1
+set $display1 DP-0
+set $display2 HDMI-0
+
+workspace $ws1 output $display1
+workspace $ws4 output $display2
+workspace $ws5 output $display2
+workspace $ws6 output $display2
+workspace $ws8 output $display1
+workspace $ws10 output $display2
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1 
@@ -248,19 +256,22 @@ bindsym --release control+Print exec flameshot gui -p ~/img/scrot
 bindsym --release Print exec flameshot screen -c -p ~/img/scrot
 
 for_window [class="Spotify"] move to workspace $ws10
-for_window [class="youtube*"] move to workspace $ws10
+for_window [class="Pulseeffects"] move to workspace $ws10
 assign [class="TelegramDesktop"] $ws4
 assign [class="discord"] $ws4
-assign [class="Firefox"] $ws3
-assign [class="Chromium"] $ws5
+assign [class="^firefox$"] $ws3
+assign [class="firefoxdeveloperedition"] $ws3
+assign [class="Google-chrome"] $ws5
 assign [class="Emacs"] $ws2
 assign [class="MyPaint"] $ws6
 assign [class="Oni2_editor"] $ws2
-assign [class="code-oss"] $ws2
-assign [class="alacritty"] $ws1
-assign [class="youtube*"] $ws1
+assign [class="Code"] $ws2
+assign [class="org.remmina.Remmina"] $ws8
 
 # use keyboard altgr variant
 exec setxkbmap us -variant altgr-intl
 exec betterlockscreen -w dim
 exec_always --no_startup-id compton --backend glx --blur-method kawase --blur-background
+exec amixer -c 0 set 'HP/Speaker Auto Detect' unmute
+exec pulseeffects
+exec xrandr --output DP-0 --left-of HDMI-0
