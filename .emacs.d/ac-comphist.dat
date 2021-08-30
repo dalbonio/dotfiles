@@ -1,0 +1,66 @@
+((("evil" .
+   [1 0 0 0])
+  ("require" .
+   [2 0 0 0 0 0 0])
+  ("use-package" .
+   [4 0 0 0 0 0 0 0 0 0 4])
+  (":ensure" .
+   [6 0 0 0 0 0 0])
+  (":config" .
+   [3 0 0 0 0 0 0])
+  ("setq-local" .
+   [0 0 0 0 0 1 0 0 0 0])
+  ("neo-theme" .
+   [1 0 0 0 0 0 0 0 0])
+  ("if" .
+   [1 0])
+  ("display" .
+   [0 0 0 0 0 0 1])
+  ("progn" .
+   [1 0 0 0 0])
+  ("settings" .
+   [1 0 0 0 0 0 0 0])
+  ("delete-selection-mode" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1])
+  ("setq" .
+   [11 0 0 0])
+  ("gc-cons-threshold" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1])
+  ("read-process-output-max" .
+   [1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("read" .
+   [1 0 0 0])
+  ("auto-save-default" .
+   [1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("nil" .
+   [4 0 0])
+  ("make-backup-files" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1])
+  ("create-lockfiles" .
+   [1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("global" .
+   [1 0 0 0 0 0])
+  ("global-display-line-numbers-mode" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1])
+  ("exec-path-from-shell" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0])
+  (":mode" .
+   [1 0 0 0 0])
+  ("web-mode" .
+   [3 0 0 0 0 0 0 0])
+  (":commands" .
+   [2 0 0 0 0 0 0 0 0])
+  ("company-tooltip" .
+   [0 0 0 0 0 0 0 1 0 0 0 0 0 0 0])
+  (":bind" .
+   [1 0 0 0 0])
+  ("magit-status" .
+   [1 0 0 0 0 0 0 0 0 0 0 0])
+  (":hook" .
+   [1 0 0 0 0])
+  ("lsp-mode" .
+   [1 0 0 0 0 0 0 0])
+  ("lsp-deferred" .
+   [1 0 0 0 0 0 0 0 0 0 0 0])
+  ("solidity-mode" .
+   [1 0 0 0 0 0 0 0 0 0 0 0 0])))

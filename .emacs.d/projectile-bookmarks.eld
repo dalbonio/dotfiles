@@ -1,0 +1,1 @@
+("~/folder/crypto_farm/" "~/folder/vakinha/vakinha/")
