@@ -20,7 +20,6 @@ return require('packer').startup(function(use)
 
 	use {'kyazdani42/nvim-web-devicons', disable = has_vscode}
 	use { "lukas-reineke/indent-blankline.nvim", disable = has_vscode }
-	use { 'tpope/vim-surround', disable = has_vscode }
 	use { 'windwp/nvim-autopairs', disable = has_vscode }
 	use { 'neovim/nvim-lspconfig' , disable = has_vscode}
 	use { 'hrsh7th/nvim-cmp' , disable = has_vscode}
@@ -57,6 +56,14 @@ return require('packer').startup(function(use)
 	use { 'voldikss/vim-floaterm' , disable = has_vscode}
 
 	use { 'mhartington/formatter.nvim', disable = has_vscode }
+
+	use {
+	  'romgrk/barbar.nvim',
+	  requires = {'kyazdani42/nvim-web-devicons'},
+	  disable = has_vscode
+	}
+
+	use { 'tpope/vim-fugitive', disable = has_vscode}
 
 end)
 
